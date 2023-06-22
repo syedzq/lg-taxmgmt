@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+    <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+-->
+    <div>
+        <div
+            class="md:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+            <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 group">
+                    <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-500"
+                        fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                    </svg>
+                    <span
+                        class="text-sm font-normal text-gray-500 dark:text-gray-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-500">Discover</span>
+                </button>
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 group">
+                    <svg class="w-6 h-6 mb-1 text-emerald-600 dark:text-emerald-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-500"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                    </svg>
+                    <span
+                        class="text-sm font-normal text-emerald-600 dark:text-emerald-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-500">Giving</span>
+                </button>
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 group">
+                    <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-500"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z">
+                        </path>
+                    </svg>
+                    <span
+                        class="text-sm font-normal text-gray-500 dark:text-gray-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-500">Fundraising</span>
+                </button>
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 group">
+                    <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-500"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path clip-rule="evenodd" fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z">
+                        </path>
+                    </svg>
+                    <span
+                        class="text-sm font-normal text-gray-500 dark:text-gray-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-500">Profile</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Static sidebar for desktop -->
+        <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+            <!-- Sidebar component, swap this element with another sidebar if you like -->
+            <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
+                <div class="flex h-16 shrink-0 items-center">
+                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=emerald&shade=600"
+                        alt="Your Company">
+                </div>
+                <nav class="flex flex-1 flex-col">
+                    <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                        <li>
+                            <ul role="list" class="-mx-2 space-y-1">
+                                <li>
+                                    <a href="#"
+                                        class="text-gray-700 hover:text-emerald-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                        <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-emerald-600"
+                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 01-1.383-2.46l.007-.042a2.25 2.25 0 01.29-.787l.09-.15a2.25 2.25 0 012.37-1.048l1.178.236a1.125 1.125 0 001.302-.795l.208-.73a1.125 1.125 0 00-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 01-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 01-1.458-1.137l1.411-2.353a2.25 2.25 0 00.286-.76m11.928 9.869A9 9 0 008.965 3.525m11.928 9.868A9 9 0 118.965 3.525" />
+                                        </svg>
+                                        Discover
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="text-gray-700 hover:text-emerald-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                        <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-emerald-600"
+                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                        </svg>
+                                        Search
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- Current: "bg-gray-50 text-emerald-600", Default: "text-gray-700 hover:text-emerald-600 hover:bg-gray-50" -->
+                                    <a href="#"
+                                        class="bg-gray-50 text-emerald-600 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                        <svg class="h-6 w-6 shrink-0 text-emerald-600" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                                        </svg>
+                                        My Giving
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="text-gray-700 hover:text-emerald-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                        <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-emerald-600"
+                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                                        </svg>
+                                        My Fundraising
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="text-gray-700 hover:text-emerald-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                        <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-emerald-600"
+                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                                        </svg>
+                                        Notifications
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="text-gray-700 hover:text-emerald-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                        <img class="h-6 w-6 rounded-full bg-gray-50"
+                                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt="">
+                                        My Profile
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="text-xs font-semibold leading-6 text-gray-400">About LaunchGood</div>
+                            <ul role="list" class="-mx-2 mt-2 space-y-1">
+                                <li>
+                                    <!-- Current: "bg-gray-50 text-emerald-600", Default: "text-gray-700 hover:text-emerald-600 hover:bg-gray-50" -->
+                                    <a href="#"
+                                        class="text-gray-700 hover:text-emerald-600 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                        <span class="truncate">How It Works</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="text-gray-700 hover:text-emerald-600 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                        <span class="truncate">About</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="text-gray-700 hover:text-emerald-600 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                        <span class="truncate">Careers</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mt-auto">
+                            <a href="#"
+                                class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-emerald-600">
+                                <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-emerald-600" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                Settings
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="lg:pl-72">
+            <main class="py-10 bg-gray-100">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-7">
+                    <nav class="hidden md:block flex" aria-label="Breadcrumb">
+                        <ol role="list" class="flex items-center space-x-4">
+                            <li>
+                                <div class="flex items-center">
+                                    <a href="#" class="text-sm font-medium text-gray-500 hover:text-gray-700">My
+                                        Giving</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20"
+                                        fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                                        aria-current="page">Tax Management</a>
+                                </div>
+                            </li>
+                        </ol>
+                    </nav>
+                    <div>
+                        <h3 class="text-2xl font-semibold leading-6 text-gray-900">Tax Dashboard</h3>
+                        <nav class="flex items-center justify-between sm:px-0">
+                            <div class="-mt-px flex w-0 flex-1">
+                                <a href="#"
+                                    class="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500 hover:text-gray-700">
+                                    <svg class="mr-3 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M18 10a.75.75 0 01-.75.75H4.66l2.1 1.95a.75.75 0 11-1.02 1.1l-3.5-3.25a.75.75 0 010-1.1l3.5-3.25a.75.75 0 111.02 1.1l-2.1 1.95h12.59A.75.75 0 0118 10z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    2022
+                                </a>
+                            </div>
+                        </nav>
+                        <dl
+                            class="flex flex-col md:flex-row mt-5 gap-2 divide-y divide-gray-200 md:divide-x md:divide-y-0 rounded-lg bg-white shadow">
+                            <div class="flex-grow px-4 p-6">
+                                <dt class="text-base font-normal text-gray-600">2023 tax-deductible giving</dt>
+                                <dd class="mt-1 flex flex-row items-baseline justify-between lg:flex">
+                                    <div class="flex items-baseline text-4xl font-semibold text-emerald-600">
+                                        $4,101.32
+                                    </div>
+                                </dd>
+                                <span class="text-sm font-medium text-gray-500">January 1, 2023 — December 31,
+                                    2023</span>
+                            </div>
+                            <div class="flex-shrink px-4 py-2 md:py-6">
+                                <dt class="hidden md:block text-base font-normal text-gray-600">Set tax jurisdiction</dt>
+                                <dd class="mt-1 flex flex-row items-center justify-between md:block lg:flex">
+                                    <div class="flex-1 truncate text-sm my-2">
+                                        <p class="font-medium text-gray-900">🇺🇸 United States</p>
+                                        <p class="text-gray-500">January 1 – December 31</p>
+                                    </div>
+                                    <div class="relative">
+                                        <script>
+                                            document.addEventListener("DOMContentLoaded", function () {
+                                                // Grab the button by its id
+                                                var button = document.getElementById("tax-jurisdiction-button");
+
+                                                // Grab the ul by its id
+                                                var ul = document.getElementById("tax-jurisdiction-select");
+
+                                                // Initially hide the ul
+                                                ul.classList.add('opacity-0');
+
+                                                // Add a click event listener to the button
+                                                button.addEventListener("click", function () {
+
+                                                    // If the ul is currently displayed, hide it, else show it
+                                                    if (ul.classList.contains('opacity-0')) {
+                                                        ul.classList.remove('opacity-0');
+                                                        ul.classList.add('opacity-100', 'transition', 'ease-in', 'duration-100');
+
+                                                        // As the button controls the display of the ul, set 'aria-expanded' to true
+                                                        button.setAttribute("aria-expanded", "true");
+                                                    } else {
+                                                        ul.classList.remove('opacity-100', 'transition', 'ease-in', 'duration-100');
+                                                        ul.classList.add('opacity-0');
+
+                                                        // As the ul is now hidden, set 'aria-expanded' to false
+                                                        button.setAttribute("aria-expanded", "false");
+                                                    }
+
+                                                    // To make the first item in the list focused when the list is opened
+                                                    if (ul.classList.contains('opacity-100')) {
+                                                        ul.querySelector('li[role="option"]').focus();
+                                                    }
+                                                });
+
+                                                // To manage keyboard events for accessibility
+                                                ul.addEventListener('keydown', function (e) {
+                                                    var focusedOption = document.activeElement;
+                                                    if (e.key === "ArrowDown") {
+                                                        var nextSibling = focusedOption.nextSibling;
+                                                        if (nextSibling) {
+                                                            nextSibling.focus();
+                                                        }
+                                                        e.preventDefault();
+                                                    } else if (e.key === "ArrowUp") {
+                                                        var previousSibling = focusedOption.previousSibling;
+                                                        if (previousSibling) {
+                                                            previousSibling.focus();
+                                                        }
+                                                        e.preventDefault();
+                                                    }
+                                                });
+                                            });
+
+                                        </script>
+                                        <button type="button" id="tax-jurisdiction-button"
+                                            class="ml-3 inline-flex rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                                            Change
+                                        </button>
+                                        <!--
+      Select popover, show/hide based on select state.
+
+      Entering: ""
+        From: ""
+        To: ""
+      Leaving: "transition ease-in duration-100"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+                                        <ul id="tax-jurisdiction-select"
+                                            class="absolute right-0 z-10 mt-2 w-72 origin-top-right divide-y divide-gray-200 overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                            tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                                            aria-activedescendant="listbox-option-0">
+                                            <!--
+          Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
+  
+          Highlighted: "bg-emerald-600 text-white", Not Highlighted: "text-gray-900"
+        -->
+                                            <li class="text-gray-900 cursor-default select-none p-4 text-sm hover:bg-gray-100"
+                                                id="listbox-option-0" role="option">
+                                                <div class="flex flex-col">
+                                                    <div class="flex justify-between">
+                                                        <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                                                        <p class="font-normal">🇺🇸 United States</p>
+                                                        <!--
+                Checkmark, only display for selected option.
+  
+                Highlighted: "text-white", Not Highlighted: "text-emerald-600"
+              -->
+                                                        <span class="text-emerald-600">
+                                                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
+                                                                aria-hidden="true">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                                                    clip-rule="evenodd" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <!-- Highlighted: "text-emerald-200", Not Highlighted: "text-gray-500" -->
+                                                    <p class="text-gray-500 mt-1">January 1 – December 31</p>
+                                                </div>
+                                            </li>
+                                            <li class="text-gray-900 cursor-default select-none p-4 text-sm hover:bg-gray-100"
+                                                id="listbox-option-0" role="option">
+                                                <div class="flex flex-col">
+                                                    <div class="flex justify-between">
+                                                        <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                                                        <p class="font-normal">🇨🇦 Canada</p>
+                                                        <!--
+                  Checkmark, only display for selected option.
+    
+                  Highlighted: "text-white", Not Highlighted: "text-emerald-600"
+                -->
+                                                        <span class="text-emerald-600">
+                                                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
+                                                                aria-hidden="true">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                                                    clip-rule="evenodd" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <!-- Highlighted: "text-emerald-200", Not Highlighted: "text-gray-500" -->
+                                                    <p class="text-gray-500 mt-1">January 1 – December 31</p>
+                                                </div>
+                                            </li>
+                                            <li class="text-gray-900 cursor-default select-none p-4 text-sm hover:bg-gray-100"
+                                                id="listbox-option-0" role="option">
+                                                <div class="flex flex-col">
+                                                    <div class="flex justify-between">
+                                                        <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                                                        <p class="font-normal">🇬🇧 United Kingdom</p>
+                                                        <!--
+                  Checkmark, only display for selected option.
+    
+                  Highlighted: "text-white", Not Highlighted: "text-emerald-600"
+                -->
+                                                        <span class="text-emerald-600">
+                                                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
+                                                                aria-hidden="true">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                                                    clip-rule="evenodd" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <!-- Highlighted: "text-emerald-200", Not Highlighted: "text-gray-500" -->
+                                                    <p class="text-gray-500 mt-1">April 6 – April 5</p>
+                                                </div>
+                                            </li>
+                                            <li class="text-gray-900 cursor-default select-none p-4 text-sm hover:bg-gray-100"
+                                                id="listbox-option-0" role="option">
+                                                <div class="flex flex-col">
+                                                    <div class="flex justify-between">
+                                                        <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                                                        <p class="font-normal">Custom...</p>
+                                                        <!--
+                  Checkmark, only display for selected option.
+    
+                  Highlighted: "text-white", Not Highlighted: "text-emerald-600"
+                -->
+                                                        <span class="text-emerald-600">
+                                                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
+                                                                aria-hidden="true">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                                                    clip-rule="evenodd" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <!-- Highlighted: "text-emerald-200", Not Highlighted: "text-gray-500" -->
+                                                    <p class="text-gray-500 mt-1">Set a custom tax date</p>
+                                                </div>
+                                            </li>
+                                            <!-- More items... -->
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-4 flex flex-col items md:flex-row">
+                        <div class="text-gray-700 pb-2 md:pb-0 flex-grow"><dt class="h-full">Send me a reminder email in </dt></div>
+                        <div class="flex-shrink">
+                            <button id="download-all-tax" type="button"
+                            class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                             aria-expanded="true" aria-haspopup="true">
+                            1 month
+                            <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        </div>
+                    </div>
+                    <div class="sm:flex sm:items-center">
+                        <div class="sm:flex-auto">
+                            <h1 class="text-base font-semibold leading-6 text-gray-900">Donation breakdown by registered
+                                charity
+                            </h1>
+                        </div>
+                        <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+                            <div class="relative inline-block text-left">
+                                <div>
+                                    <button id="download-all-tax" type="button"
+                                        class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                         aria-expanded="true" aria-haspopup="true">
+                                        Download All...
+                                        <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+                                            aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        // Grab the button by its id
+                                        var taxButton = document.getElementById("download-all-tax");
+
+                                        // Grab the ul by its id
+                                        var taxUl = document.getElementById("download-options");
+
+                                        // Initially hide the ul
+                                        taxUl.classList.add('opacity-0');
+
+                                        // Add a click event listener to the button
+                                        taxButton.addEventListener("click", function () {
+
+                                            // If the ul is currently displayed, hide it, else show it
+                                            if (taxUl.classList.contains('opacity-0')) {
+                                                taxUl.classList.remove('opacity-0');
+                                                taxUl.classList.add('opacity-100', 'transition', 'ease-in', 'duration-100');
+
+                                                // As the button controls the display of the ul, set 'aria-expanded' to true
+                                                taxButton.setAttribute("aria-expanded", "true");
+                                            } else {
+                                                taxUl.classList.remove('opacity-100', 'transition', 'ease-in', 'duration-100');
+                                                taxUl.classList.add('opacity-0');
+
+                                                // As the ul is now hidden, set 'aria-expanded' to false
+                                                taxButton.setAttribute("aria-expanded", "false");
+                                            }
+
+                                            // To make the first item in the list focused when the list is opened
+                                            if (taxUl.classList.contains('opacity-100')) {
+                                                taxUl.querySelector('li[role="option"]').focus();
+                                            }
+                                        });
+
+                                        // To manage keyboard events for accessibility
+                                        taxUl.addEventListener('keydown', function (e) {
+                                            var focusedOption = document.activeElement;
+                                            if (e.key === "ArrowDown") {
+                                                var nextSibling = focusedOption.nextSibling;
+                                                if (nextSibling) {
+                                                    nextSibling.focus();
+                                                }
+                                                e.preventDefault();
+                                            } else if (e.key === "ArrowUp") {
+                                                var previousSibling = focusedOption.previousSibling;
+                                                if (previousSibling) {
+                                                    previousSibling.focus();
+                                                }
+                                                e.preventDefault();
+                                            }
+                                        });
+                                    });
+
+                                </script>
+                                <!--
+                          Dropdown menu, show/hide based on menu state.
+                      
+                          Entering: "transition ease-out duration-100"
+                            From: "transform opacity-0 scale-95"
+                            To: "transform opacity-100 scale-100"
+                          Leaving: "transition ease-in duration-75"
+                            From: "transform opacity-100 scale-100"
+                            To: "transform opacity-0 scale-95"
+                        -->
+                                <div id="download-options" class="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                    <div class="py-1" role="none">
+                                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                                        <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100"
+                                            role="menuitem" tabindex="-1" id="menu-item-0">Excel spreadsheet (.XLSX)</a>
+                                        <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100"
+                                            role="menuitem" tabindex="-1" id="menu-item-1">CSV</a>
+                                        <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100"
+                                            role="menuitem" tabindex="-1" id="menu-item-2">PDF</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 flow-root">
+                        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                                <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
+                                    <table class="min-w-full divide-y divide-gray-300">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th scope="col"
+                                                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                                                </th>
+                                                <th scope="col"
+                                                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                                                    Organization</th>
+                                                <th scope="col"
+                                                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                    EIN</th>
+                                                <th scope="col"
+                                                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                    Total Donated</th>
+                                                <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
+                                                    <span class="sr-only">Download Tax Receipts</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200 bg-white">
+                                            <tr class="hover:bg-gray-100">
+                                                <td class="relative pl-4 text-right text-gray-400 hover:text-gray-600 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-6 h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                    </svg>
+                                                    <span class="sr-only">Expand</span>
+                                                </td>
+                                                </td>
+                                                <td
+                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                    Global Relief Foundation</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">23-4567890
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">$254.17
+                                                </td>
+                                                <td
+                                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                    <a href="#"
+                                                        class="text-emerald-600 hover:text-emerald-900">Download<span
+                                                            class="sr-only">, Global Relief Foundation</span></a>
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-100">
+                                                <td class="relative pl-4 text-right text-gray-400 hover:text-gray-600 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                                <span class="sr-only">Expand</span>
+                                            </td>
+                                            <td
+                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                    International Aid Network</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">45-6789012
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">$762.89
+                                                </td>
+                                                <td
+                                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                    <a href="#"
+                                                        class="text-emerald-600 hover:text-emerald-900">Download<span
+                                                            class="sr-only">, International Aid Network</span></a>
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-100">
+                                                <td class="relative pl-4 text-right text-gray-400 hover:text-gray-600 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                                <span class="sr-only">Expand</span>
+                                            </td>
+                                            </td>
+                                            <td
+                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                    Children's Hope Foundation</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">37-8912345
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">$534.12
+                                                </td>
+                                                <td
+                                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                    <a href="#"
+                                                        class="text-emerald-600 hover:text-emerald-900">Download<span
+                                                            class="sr-only">, Children's Hope Foundation</span></a>
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-100">
+                                                <td class="relative pl-4 text-right text-gray-400 hover:text-gray-600 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                                <span class="sr-only">Expand</span>
+                                            </td>
+                                            </td>
+                                                
+                                            <td
+                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                    Education For All</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">88-7654321
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">$432.18
+                                                </td>
+                                                <td
+                                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                    <a href="#"
+                                                        class="text-emerald-600 hover:text-emerald-900">Download<span
+                                                            class="sr-only">, Education For All</span></a>
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-100">
+                                                <td class="relative pl-4 text-right text-gray-400 hover:text-gray-600 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                                <span class="sr-only">Expand</span>
+                                            </td>
+                                            </td>
+                                            <td
+                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                    Water Life</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">59-1234567
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">$897.50
+                                                </td>
+                                                <td
+                                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                    <a href="#"
+                                                        class="text-emerald-600 hover:text-emerald-900">Download<span
+                                                            class="sr-only">, Water Life</span></a>
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-100">
+                                                <td class="relative pl-4 text-right text-gray-400 hover:text-gray-600 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                                <span class="sr-only">Expand</span>
+                                            </td>
+                                            </td>
+                                            <td
+                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                    Better Future Initiative</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">76-2345678
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">$265.32
+                                                </td>
+                                                <td
+                                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                    <a href="#"
+                                                        class="text-emerald-600 hover:text-emerald-900">Download<span
+                                                            class="sr-only">, Better Future Initiative</span></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
